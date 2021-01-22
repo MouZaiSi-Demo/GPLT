@@ -23,13 +23,13 @@ int main(void)
 {
     LL n, a, b, Numerator = 0, Denominator = 1, gcdvalue;
     cin >> n;
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n;i++)
     {
         scanf("%lld/%lld", &a, &b);
-        gcdvalue = (Numerator == 0 || Denominator == 0) ? 1 : gcd(abs(Numerator), abs(Denominator));
+        gcdvalue = (Numerator == 0) ? 1 : gcd(abs(Numerator), Denominator);
         Numerator /= gcdvalue;
         Denominator /= gcdvalue;
-        gcdvalue = (a == 0 || b == 0) ? 1 : gcd(abs(a), abs(b));
+        gcdvalue = (a == 0) ? 1 : gcd(abs(a), b);
         a /= gcdvalue;
         b /= gcdvalue;
         Numerator = Numerator * b + Denominator * a;
@@ -37,7 +37,7 @@ int main(void)
     }
     LL interger = Numerator / Denominator;
     Numerator -= interger * Denominator;
-    gcdvalue = (Numerator == 0 || Denominator == 0) ? 1 : gcd(abs(Numerator), abs(Denominator));
+    gcdvalue = (Numerator == 0) ? 1 : gcd(abs(Numerator), Denominator);
     Numerator /= gcdvalue;
     Denominator /= gcdvalue;
     if (interger != 0)
@@ -47,10 +47,10 @@ int main(void)
     }
     if (Numerator != 0)
         cout << Numerator << "/" << Denominator;
-    if (interger == 0 && Numerator == 0)
-        cout << "0";
+    if(interger == 0 && Numerator ==0)
+        cout << "0" ;
 
-    return 0;
+return 0;
 }
 
 /* //再贴一个ch写的代码 比我的简洁
