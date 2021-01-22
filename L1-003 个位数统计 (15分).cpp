@@ -1,3 +1,5 @@
+//在处理0的问题上 明显是字符串更有优越性
+
 #include <iostream> 
 #include <string> 
 using namespace std;
